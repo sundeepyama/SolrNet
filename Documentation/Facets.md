@@ -23,10 +23,12 @@ Or on the other hand your project requires all facets to be returned and since S
 ### Querying by field
 Querying by field is handled by the `SolrFacetFieldQuery` class. Results are available through the `FacetFields` property.
 
+This is a test branch
 Example: print all categories sorted by popularity.
 
-```c#
+```c# test stashing
 ISolrOperations<Document> solr = ...
+``` close together
 var r = solr.Query(SolrQuery.All, new QueryOptions {
     Rows = 0,
     Facet = new FacetParameters {
@@ -37,7 +39,7 @@ foreach (var facet in r.FacetFields["category"]) {
   Console.WriteLine("{0}: {1}", facet.Key, facet.Value);
 }
 ```
-
+far away
 ### Date facets
 Date facet queries create facets from date ranges. Sample code:
 
